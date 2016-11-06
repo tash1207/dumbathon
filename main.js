@@ -1,9 +1,10 @@
 // Object constructors
 
-function Noun(noun, plural, example) {
+function Noun(noun, plural, example, personification) {
   this.noun = noun;
   this.plural = plural;
   this.example = example;
+  this.personification = personification;
 }
 
 function Company(name, mission) {
@@ -33,13 +34,14 @@ function getRandom(list) {
 
 function generateNoun() {
   var nouns = [
-    new Noun("baby", "babies", "boys and girls"),
-    new Noun("car", "cars", "Ferraris"),
-    new Noun("cat", "cats", "calicos"),
-    new Noun("dog", "dogs", "corgis"),
-    new Noun("food", "food", "sandwiches"),
-    new Noun("music", "music", "choons"),
-    new Noun("skateboarding", "skateboarding", "kickflips")
+    new Noun("baby", "babies", "boys and girls", "baby geniuses"),
+    new Noun("car", "cars", "Ferraris", "drivers"),
+    new Noun("cat", "cats", "calicos", "cat enthusiasts"),
+    new Noun("dog", "dogs", "corgis", "dog lovers"),
+    new Noun("food", "food", "sandwiches", "eaters"),
+    new Noun("music", "music", "choons", "musicians"),
+    new Noun("skateboard", "skateboarding", "kickflips",
+      "Tony Hawk and Chad Muska")
   ]
 
   return getRandom(nouns);
@@ -50,21 +52,29 @@ function generateCompany(noun) {
     new Company(
       "Amazon",
       `Our vision is to be earth's most customer-centric company; to build a
-      place where people can come to find and discover any ${noun.noun} they
-      might want to buy online.`),
+      place where ${noun.personification} can come to find and discover any
+      ${noun.noun} they might want to buy online.`),
     new Company(
       "Facebook",
-      `Stay connected with ${noun.plural}.`),
+      `Stay connected with ${noun.plural} and share the ${noun.example} that
+      matter to you.`),
     new Company(
       "Github",
-      `How people build ${noun.plural}.`),
+      `How ${noun.personification} build ${noun.plural}. Github for
+      ${noun.plural.capitalize()} offers all of the distributed version control
+      and source code management functionality of Git.`),
     new Company(
       "Google",
-      `Organize the world's ${noun.plural}.`),
+      `Organize the world's ${noun.plural} and make ${noun.example} universally
+      accessible and useful.`),
     new Company(
       "Pandora",
-      `Pandora for ${noun.plural.capitalize()} is the ${noun.noun} genome
-      project providing on-demand ${noun.example} for everyone.`),
+      `Pandora for ${noun.plural.capitalize()} is based on the
+      ${noun.noun.capitalize()} Genome Project, the most sophisticated
+      taxonomy of ${noun.plural} ever collected. It represents over ten years
+      of analysis by our trained team of ${noun.personification}, and spans
+      everything from new ${noun.example} all the way back to old
+      ${noun.example}.`),
     new Company(
       "Strava",
       `Strava for ${noun.plural.capitalize()} is the social network for
@@ -74,8 +84,8 @@ function generateCompany(noun) {
       "Tinder",
       `Tinder for ${noun.plural.capitalize()} is a location-based social
       discovery service application that facilitates communication between
-      mutually interested ${noun.plural}, allowing matched ${noun.plural}
-      to chat.`),
+      mutually interested ${noun.personification}, allowing matched
+      ${noun.personification} to chat.`),
     new Company(
       "Twitch",
       `Twitch for ${noun.plural.capitalize()} is a live streaming video
@@ -84,8 +94,7 @@ function generateCompany(noun) {
     new Company(
       "Uber",
       `${noun.plural.capitalize()} as reliable as running water, everywhere,
-      for everyone.`
-      )
+      for ${noun.personification}.`)
   ]
 
   return getRandom(companies);
