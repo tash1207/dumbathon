@@ -37,6 +37,7 @@ function generateNoun() {
     new Noun("baby", "babies", "boys and girls", "baby geniuses"),
     new Noun("car", "cars", "Ferraris", "drivers"),
     new Noun("cat", "cats", "calicos", "cat enthusiasts"),
+    new Noun("closet", "closets", "walk-in closets", "personal organizers"),
     new Noun("dog", "dogs", "corgis", "dog lovers"),
     new Noun("food", "food", "sandwiches", "eaters"),
     new Noun("music", "music", "choons", "musicians"),
@@ -49,6 +50,13 @@ function generateNoun() {
 
 function generateCompany(noun) {
   var companies = [
+    new Company(
+      "Airbnb",
+      `Airbnb for ${noun.plural.capitalize()} is a trusted community marketplace
+      for people to list, discover, and book unique ${noun.plural} around the
+      world. Whether ${noun.example} or any type of ${noun.noun}, for a night,
+      week, or even a month, Airbnb for ${noun.plural.capitalize()} connects
+      people to unique travel experiences.`),
     new Company(
       "Amazon",
       `Our vision is to be earth's most customer-centric company; to build a
