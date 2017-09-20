@@ -1,2 +1,4 @@
 # dumbathon
-My project for the dumbathon: a dumbathon project generator.
+My project for the 2016 dumbathon: a dumbathon project generator.
+
+https://tash1207.github.io/dumbathon/
